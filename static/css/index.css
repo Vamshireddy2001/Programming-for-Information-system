@@ -21,6 +21,21 @@
     width: 60%;
     height: 100%;
 }
+.topbarsectionnav .navbox
+{
+    border-left: 0.8px solid black;
+    border-right: 0.8px solid black;
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topbarsectionnav .navbox:hover
+{
+  background-color: white;
+  color: grey;
+}
 .topbar .topbarsectioninfo
 {
     display: flex;
@@ -29,4 +44,3 @@
     height: 100%;
     align-items: center;
 }
-.topbarsectionnav .navbox
