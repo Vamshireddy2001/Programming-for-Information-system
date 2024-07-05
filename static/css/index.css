@@ -4,6 +4,7 @@
     left: 0px;
     padding: 0px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden;
 }
 .topbar
 {
@@ -83,4 +84,17 @@ nav .navsection2
 {
     height: 25px;
     text-indent: 10px;
+}
+main
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+main .background
+{
+    width: 95%;
+    height: auto;
 }
