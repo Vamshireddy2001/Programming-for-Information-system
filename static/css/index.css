@@ -110,5 +110,20 @@ main .background
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 95%;
+    margin-top: 20px;
+}
+.collectionlove
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
+    margin-top: 20px;
+}
+.collectionlove img
+
+{
+    width: 80%;
+    height: 80%;
 }
