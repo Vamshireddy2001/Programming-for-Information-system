@@ -56,20 +56,31 @@ header nav
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 40px;
 }
 nav .navsection1
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    background-color: red;
+    width: 70%;
+    height: 100%;
+    font-size: 11px;
 }
 nav .navsection2
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    width: 40%;
-    background-color: blue;
+    width: 30%;
+    height: 100%;
+}
+.navsection1 h1
+{
+    margin-left: 70px;
+}
+.navsection2 input
+{
+    height: 25px;
+    text-indent: 10px;
 }
