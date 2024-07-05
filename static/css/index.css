@@ -53,5 +53,23 @@
 }
 header nav
 {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .navsection1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: red;
+}
+nav .navsection2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    background-color: blue;
 }
