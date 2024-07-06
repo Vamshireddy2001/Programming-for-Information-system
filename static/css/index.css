@@ -128,3 +128,8 @@ main .background
     width: 80%;
     height: 80%;
 }
+.topbarsectionnav a
+{
+    text-decoration: none;
+    color: black;
+}
