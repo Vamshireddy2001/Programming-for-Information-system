@@ -147,3 +147,30 @@ main .background
     justify-content: space-evenly;
     width: 100%;
 }
+.summerfabrics
+{
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    width: 100%;
+    height: 500px;
+}
+.summerfabrics .summersection1
+{
+    width: 50%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.summersection1 img
+{
+    width:100%;
+    height: 50%;
+}
+.summerfabrics .summersection2
+{
+    width: 50%;
+    background-color: red;
+}
