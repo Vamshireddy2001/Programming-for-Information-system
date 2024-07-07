@@ -197,3 +197,21 @@ font-size: 14px;
     height: 80%;
     border: 1px dashed rgb(238, 57, 57);
 }
+.summerfabrics .summersection2 .textsummer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.textsummer h2, h3
+{
+    width: 60%;
+    text-align: right;
+    font-weight: 500;
+}
+.textsummer h2
+{
+    font-weight: 600;
+}
