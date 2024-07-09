@@ -12,5 +12,16 @@ def home():
 def womensection():
     return render_template('womensection.html')
 
+
+@app.route("/login")
+def login():
+    return render_template('loginpage.html')
+
+
+@app.route("/register")
+def register():
+    return render_template('registerpage.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
