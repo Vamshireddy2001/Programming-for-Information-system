@@ -33,6 +33,13 @@
     justify-content: center;
     align-items: center;
 }
+.navbox h3
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .topbarsectionnav .navbox:hover
 {
   background-color: white;
@@ -183,6 +190,11 @@ main .background
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.summersection1 .fabric:hover
+{
+   transform:scale(1.2);
+   transform-origin: left;
 }
 .summersection1 .fabric h3{
 background-color: black;
