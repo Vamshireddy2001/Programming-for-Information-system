@@ -257,21 +257,26 @@ footer
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 70px;
 }
 footer nav
 {
     width: 30%;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
+    color: #186672;
+}
+nav h3
+{
     text-align: left;
 }
 footer .boxnav
 {
-    height: 200px;
-    width: 30%;
+    height: 250px;
+    width: 25%;
     background-image:  linear-gradient(#186672, #16354C);
     display: flex;
     justify-content: center;
