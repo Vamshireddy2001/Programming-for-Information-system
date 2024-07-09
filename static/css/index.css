@@ -106,6 +106,7 @@ main .background
 {
     width: 95%;
     height: auto;
+    overflow-y: hidden;
 }
 .background img
 {
