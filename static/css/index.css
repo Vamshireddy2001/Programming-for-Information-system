@@ -291,3 +291,11 @@ footer .boxnav
     text-align: left;
     margin-left: 20px;
 }
+
+hr
+{
+    width: 100%px;
+    height: 0%;
+    border: 1px dashed rgb(238, 57, 57);
+    margin-top: 30px;
+}
