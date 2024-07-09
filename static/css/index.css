@@ -307,5 +307,8 @@ hr
 }
 .themechange
 {
-    
+   margin-left: 20px;
+   background-color: none;
+   border: none; 
+   outline: none;
 }
