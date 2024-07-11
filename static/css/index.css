@@ -315,3 +315,17 @@ hr
    font-weight: 600;
    font-size: 13px;
 }
+form
+{
+    width:300px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.labels
+{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 90%;  
+}
