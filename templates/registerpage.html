@@ -12,6 +12,11 @@
         <div class="mainbody">
             <h1>User Login</h1>
             <form action="/" method="Post">
+                <div class="labels">
+                    <h6>Name</h6>
+                    <h6>Required</h6>
+                  </div>
+                  <input type="text" name="name"/>
               <div class="labels">
                <h6>Email</h6>
                <h6>Required</h6>
@@ -22,10 +27,14 @@
                <h6>Required</h6>
              </div>
              <input type="text" name="password"/>
-             
+             <div class="labels">
+                <h6>Confirm Password</h6>
+                <h6>Required</h6>
+              </div>
+              <input type="text" name="confirmpassword"/>
             </form>
-            <button>LOGIN</button>
-            <button>REGISTER</button>
+            <button type="submit">REGISTER</button>
+            <button onclick="window.location.href='/login'">LOGIN</button>
         </div>
     </main>
     {% include ('footer.html')%}
