@@ -3,6 +3,9 @@ app=Flask(__name__)
 
 
 
+@app.route("/collections")
+def collectionsRoute():
+    return render_template('collections.html')
 
 @app.route("/")
 def home():
