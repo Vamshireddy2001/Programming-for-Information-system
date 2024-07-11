@@ -9,8 +9,26 @@
 <body>
     {% include ('header.html')%}
     <main>
-
+        <div class="mainbody">
+            <h1>User Login</h1>
+            <form action="/" method="Post">
+              <div class="labels">
+               <h6>Email</h6>
+               <h6>Required</h6>
+             </div>
+             <input type="text" name="email"/>
+             <div class="labels">
+               <h6>Password</h6>
+               <h6>Required</h6>
+             </div>
+             <input type="text" name="password"/>
+             
+            </form>
+            <button>LOGIN</button>
+            <button>REGISTER</button>
+        </div>
     </main>
     {% include ('footer.html')%}
+    <script src="static/js/index.js"></script>
 </body>
 </html>

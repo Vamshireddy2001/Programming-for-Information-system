@@ -361,7 +361,7 @@ form input
 .mainbody button
 {
     width: 40%;
-    background-color: red;
+    background-color: var(--primarycolor);
     color: white;
     height: 30px;
     font-size: 20px;
