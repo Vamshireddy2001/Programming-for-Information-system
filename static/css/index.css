@@ -325,7 +325,7 @@ form
 .mainbody
 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 700px;
@@ -335,18 +335,24 @@ form
     margin-top: 20px;
     
 }
+.mainbody h1
+{
+    margin-bottom: 100px;
+    margin-top: 50px;
+    font-size: 65px;
+}
 .labels
 {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  width: 90%;  
+  width: 85%;  
   margin-top: 20px;
+  margin-left: 20px;
 }
 form input
 {
     width: 90%;
     justify-content: center;
     align-items: center;
-
 } 
