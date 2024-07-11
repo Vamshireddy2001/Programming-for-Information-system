@@ -379,4 +379,16 @@ form input
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    min-height:80vh;
+}
+.collectionbox h3
+{
+    text-align: end;
+}
+.imgsection
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
