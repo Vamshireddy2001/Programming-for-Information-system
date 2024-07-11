@@ -368,3 +368,15 @@ form input
     font-size: 20px;
     margin-top: 10px;
 }
+
+/* collectionbox */
+.collectionbox
+{
+    width: 90%;
+    height: auto;
+    box-shadow: 0px 5px 10px black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
