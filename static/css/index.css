@@ -337,7 +337,7 @@ form
 }
 .mainbody h1
 {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     margin-top: 50px;
     font-size: 65px;
 }
@@ -356,6 +356,7 @@ form input
     width: 90%;
     justify-content: center;
     align-items: center;
+    height:30px;
 } 
 .mainbody button
 {
