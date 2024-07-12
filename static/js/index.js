@@ -13,4 +13,11 @@ themeChangeButton.addEventListener('click',()=>{
         color=false;
     }
  
-})
+});
+
+let itemSection=[]
+function cartFunction(id)
+{
+    const imagePart=document.querySelector(`#${id}`);
+    
+}
