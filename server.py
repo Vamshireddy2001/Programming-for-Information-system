@@ -46,10 +46,15 @@ def register():
         confirmPassword = request.form.get('confirmpassword')
 
         message=CheckForNames(name,email,password,confirmPassword)
-        # result = db.users.insert_one({'name': name, 'email': email,password:password})
-        # print(f"Inserted document ID: {result.inserted_id}")
+        if(message):
+           return render_template('registerpage.html',message=message)
+        else:
+             if db.users.find_one({'email': email}):
+                return render_template('registerpage.html',message="User already registered!")
+             else:
+                result = db.users.insert_one({'name': name, 'email': email,'password':password})
+                return render_template('registerpage.html',message="Kindly login! User successfully registered")
          
-        return render_template('registerpage.html',message=message)
 
     return render_template('registerpage.html')
 
