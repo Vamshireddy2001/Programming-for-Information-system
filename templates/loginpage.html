@@ -22,9 +22,11 @@
               <h6>Required</h6>
             </div>
             <input type="password" name="password"/>
-            
+            <button type="submit">LOGIN</button>
            </form>
-           <button type="submit">LOGIN</button>
+           {% if message %}
+           <label>{{ message }}</label>
+           {% endif %}
            <button onclick="window.location.href='/register'">REGISTER</button>
        </div>
     </main>
