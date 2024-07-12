@@ -26,6 +26,9 @@ def collectionsRoute():
 def brands():
     return render_template('brands.html')
 
+@app.route("/cart")
+def cart():
+    return render_template('cart.html')
 
 @app.route("/")
 def home():
