@@ -77,6 +77,11 @@ header nav:hover
 {
     cursor: pointer;
 }
+.lovecollection section h3
+{
+    text-align: center;
+    width: 100%;
+}
 nav .navsection1
 {
     display: flex;
