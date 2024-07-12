@@ -391,6 +391,15 @@ form input
     align-items: center;
     min-height:80vh;
 }
+.collectionbox .imgsection button
+{
+ width: 180px;
+ height: 35px;
+ border: none;
+ background-color: #186672;
+ color: white;
+ font-weight: 600;
+}
 .imagemain
 {
     display: flex;
