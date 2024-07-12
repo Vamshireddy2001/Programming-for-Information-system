@@ -22,6 +22,11 @@ class User:
 def collectionsRoute():
     return render_template('collections.html')
 
+@app.route("/brands")
+def brands():
+    return render_template('brands.html')
+
+
 @app.route("/")
 def home():
     return render_template('mansection.html')
@@ -34,6 +39,7 @@ def womensection():
 @app.route("/login")
 def login():
     return render_template('loginpage.html')
+
 
 
 @app.route("/register",methods=['GET','POST'])
@@ -55,7 +61,6 @@ def register():
                 result = db.users.insert_one({'name': name, 'email': email,'password':password})
                 return render_template('registerpage.html',message="Kindly login! User successfully registered")
          
-
     return render_template('registerpage.html')
 
 def CheckForNames(name,email,password,confirmpassword):
