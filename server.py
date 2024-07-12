@@ -51,7 +51,7 @@ def register():
          
         return render_template('registerpage.html',message=message)
 
-    return render_template('registerpage.html',message="")
+    return render_template('registerpage.html')
 
 def CheckForNames(name,email,password,confirmpassword):
     if(name==""):

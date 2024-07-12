@@ -17,19 +17,15 @@
                     <h6>Required</h6>
                   </div>
                   <input type="text" name="name"/>
-                  <label>{{message}}</label>
               <div class="labels">
                <h6>Email</h6>
                <h6>Required</h6>
              </div>
-             <input type="text" name="email"/>
-             <label>{{message}}</label>
-             <div class="labels">
+             <input type="text" name="email"/>             <div class="labels">
                <h6>Password</h6>
                <h6>Required</h6>
              </div>
              <input type="text" name="password"/>
-             <label>{{message}}</label>
              <div class="labels">
                 <h6>Confirm Password</h6>
                 <h6>Required</h6>
@@ -39,6 +35,9 @@
             </form>
        
             <button onclick="window.location.href='/login'">LOGIN</button>
+            {% if message %}
+            <label>{{ message }}</label>
+        {% endif %}
         </div>
     </main>
     {% include ('footer.html')%}
