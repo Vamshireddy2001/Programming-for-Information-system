@@ -36,17 +36,18 @@ def login():
     return render_template('loginpage.html')
 
 
-@app.route("/register")
+@app.route("/register",methods=['GET','POST'])
 def register():
     if request.method == 'POST':
+        print('works')
         # Get form data
         name = request.form.get('name')
         email = request.form.get('email')
         password = request.form.get('password')
-
-        # Save user to MongoDB
-        result = db.users.insert_one({'name': name, 'email': email,password:password})
-        print(f"Inserted document ID: {result.inserted_id}")
+        
+        print(name,email,password)
+        # result = db.users.insert_one({'name': name, 'email': email,password:password})
+        # print(f"Inserted document ID: {result.inserted_id}")
 
         return render_template('registerpage.html')
 
