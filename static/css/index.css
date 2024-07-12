@@ -49,6 +49,7 @@
 {
   background-color: white;
   color: grey;
+  cursor:pointer;
 }
 .topbar .topbarsectioninfo
 {
@@ -71,6 +72,10 @@ header nav
     align-items: center;
     height: 40px;
 
+}
+header nav:hover
+{
+    cursor: pointer;
 }
 nav .navsection1
 {
