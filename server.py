@@ -50,11 +50,12 @@ def login():
         if(message):
            return render_template('loginpage.html',message=message)
         else:
-             if db.users.find_one({'email': email}):
-                if(db.users['password']==password):
-                   return render_template('index.html')
+             user=db.users.find_one({'email': email})
+             if user :
+                if(user['password']==password):
+                   return render_template('mansection.html',login="Logout Successfull!")
                 else:
-                    return render_template('loginpage.html',message="Password not correct!")
+                   return render_template('loginpage.html',message="Password not correct!")
              else:
                 return render_template('loginpage.html',message="Email id not resgitered registered")
        return render_template('loginpage.html',message="")
