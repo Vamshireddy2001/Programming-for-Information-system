@@ -39,7 +39,7 @@ def womensection():
     return render_template('womensection.html')
 
 
-@app.route("/login")
+@app.route("/login",methods=['GET','POST'])
 def login():
        if request.method == 'POST':
         # Get form data
@@ -48,11 +48,13 @@ def login():
 
         message=CheckForNamesLogin(email,password)
         if(message):
-           return render_template('registerpage.html',message=message)
+           return render_template('loginpage.html',message=message)
         else:
              if db.users.find_one({'email': email}):
                 if(db.users['password']==password):
-                   return render_template('index.html',message="Successfull login!")
+                   return render_template('index.html')
+                else:
+                    return render_template('loginpage.html',message="Password not correct!")
              else:
                 return render_template('loginpage.html',message="Email id not resgitered registered")
        return render_template('loginpage.html',message="")
