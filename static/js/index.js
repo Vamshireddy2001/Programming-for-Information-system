@@ -34,3 +34,16 @@ search.addEventListener('input',(e)=>{
    .then(res=>console.log(res))
    .catch(e=>console.log('err',e));
 });
+
+dictProductCollection=[
+    {"name":"A Field Of Memories","price":"$100","imgpath":"static/images/coll1.jpg"},
+    {"name":"Baby Bloom","price":"$130","imgpath":"static/images/coll12.jpg"},
+    {"name":"Be Merry","price":"$80","imgpath":"static/images/coll13.jpg"},
+    {"name":"Beach Travel","price":"$90","imgpath":"static/images/coll14.jpg"},
+    {"name":"Birds and Bobbins","price":"$110","imgpath":"static/images/coll15.jpg"},
+    {"name":"Blue Skies and Nutmeg","price":"$130","imgpath":"static/images/coll17.jpg"},
+    {"name":"British Waterways","price":"$80","imgpath":"static/images/coll18.jpg"},
+    {"name":"Butterfly Dreams","price":"$90","imgpath":"static/images/coll10.jpg"},
+    {"name":"Cutest Little Elephant Blue","price":"$120","imgpath":"static/images/coll11.jpg"},
+    {"name":">Cutest Little Elephant Pink","price":"$110","imgpath":"static/images/coll12.jpg"},
+]
