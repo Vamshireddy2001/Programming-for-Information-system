@@ -31,19 +31,26 @@ search.addEventListener('input',(e)=>{
     throw new Error('Network response was not ok');
          }
     return res.json();})
-   .then(res=>console.log(res))
+   .then(res=>
+    {
+        const container = document.getElementById('productContainer');
+        container.innerHTML = ''; 
+        products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.innerHTML = `
+                <h2>${product.name}</h2>
+                <img src="${product.imgpath}" alt="${product.name}">
+                <p>Price: ${product.price}</p>
+            `;
+            container.appendChild(productDiv);
+    })}
+   )
    .catch(e=>console.log('err',e));
 });
 
-dictProductCollection=[
-    {"name":"A Field Of Memories","price":"$100","imgpath":"static/images/coll1.jpg"},
-    {"name":"Baby Bloom","price":"$130","imgpath":"static/images/coll12.jpg"},
-    {"name":"Be Merry","price":"$80","imgpath":"static/images/coll13.jpg"},
-    {"name":"Beach Travel","price":"$90","imgpath":"static/images/coll14.jpg"},
-    {"name":"Birds and Bobbins","price":"$110","imgpath":"static/images/coll15.jpg"},
-    {"name":"Blue Skies and Nutmeg","price":"$130","imgpath":"static/images/coll17.jpg"},
-    {"name":"British Waterways","price":"$80","imgpath":"static/images/coll18.jpg"},
-    {"name":"Butterfly Dreams","price":"$90","imgpath":"static/images/coll10.jpg"},
-    {"name":"Cutest Little Elephant Blue","price":"$120","imgpath":"static/images/coll11.jpg"},
-    {"name":">Cutest Little Elephant Pink","price":"$110","imgpath":"static/images/coll12.jpg"},
-]
+
+
+function saveCollection(route,dictCollection)
+{
+    fetch(route,{method:"POST",headers:{"Content-Type":"application/json"}})
+}

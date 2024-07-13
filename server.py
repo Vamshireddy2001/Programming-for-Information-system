@@ -18,7 +18,7 @@ class User:
         return result.inserted_id
 
 product_collection = db['products']    
-@app.route('/add_products', methods=['POST'])
+@app.route('/addproducts', methods=['POST'])
 def add_products():
     ProductCollection = [
         {"name": "A Field Of Memories", "price": "$100", "imgpath": "static/images/coll1.jpg"},
@@ -57,14 +57,14 @@ def cart():
        return render_template('cart.html',login=True)
     return render_template('cart.html',login=False)
 
-@app.route('/savecollection',methods=['GET','POST'])
-def savecollection():
-    if(request.method=='POST'):
-        name=request.args.get('name')
-        imgpath=request.args.get('imgpath')
-        price=request.args.get('price')
-        db.products.insert_one({"name":name,"imgpath":imgpath,"price":price})
-        return "saved collection!"
+# @app.route('/savecollection',methods=['GET','POST'])
+# def savecollection():
+#     if(request.method=='POST'):
+#         name=request.args.get('name')
+#         imgpath=request.args.get('imgpath')
+#         price=request.args.get('price')
+#         db.products.insert_one({"name":name,"imgpath":imgpath,"price":price})
+#         return "saved collection!"
 
 
 @app.route("/")
@@ -75,7 +75,13 @@ def home():
 
 @app.route("/search/<ID>")
 def search(ID):
-    return jsonify({"ID":ID})
+    products = product_collection.find({"name": {'$regex': ID, '$options': 'i'}})
+    result = []
+    for product in products:
+        product['_id'] = str(product['_id'])  
+        result.append(product)
+
+    return jsonify(result), 200
 
 
 @app.route("/women")
