@@ -19,5 +19,5 @@ let itemSection=[]
 function cartFunction(id)
 {
     const imagePart=document.querySelector(`#${id}`);
-    
+    itemSection.push(imagePart);
 }

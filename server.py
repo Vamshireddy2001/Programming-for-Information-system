@@ -41,7 +41,21 @@ def womensection():
 
 @app.route("/login")
 def login():
-    return render_template('loginpage.html')
+       if request.method == 'POST':
+        # Get form data
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        message=CheckForNamesLogin(email,password)
+        if(message):
+           return render_template('registerpage.html',message=message)
+        else:
+             if db.users.find_one({'email': email}):
+                if(db.users['password']==password):
+                   return render_template('index.html',message="Successfull login!")
+             else:
+                return render_template('loginpage.html',message="Email id not resgitered registered")
+       return render_template('loginpage.html',message="")
 
 
 
@@ -66,9 +80,17 @@ def register():
          
     return render_template('registerpage.html')
 
+def CheckForNamesLogin(email,password):
+    if(email==""):
+        return ('email not be blank')
+        
+    elif(password==""):
+        return('password not be blank')
+        
+
 def CheckForNames(name,email,password,confirmpassword):
     if(name==""):
-        return jsonify({'error': 'Method not allowed'}), 405
+        return 'name not be blank!'
     elif(email==""):
         return ('email not be blank')
         
