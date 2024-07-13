@@ -14,11 +14,14 @@
           <div class="navbox"> <h3><a href="/women">WOMEN</a></h3></div>
        </div>
        <div class="topbarsectioninfo">
+        {% if login %}
+            <h4>{{name}}</h4>
+        {% endif %}
          <h4>TRACK ORDER</h4>
          <h4>CONTACT US</h4>
          <button class="themechange">THEME</button>
          {% if login %}
-          <button class="themechange">LOGOUT</button>
+          <button class="themechange" onclick="window.location.href='/logout'">LOGOUT</button>
          {% endif %}
        </div>
     </div>

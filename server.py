@@ -22,35 +22,42 @@ class User:
 def collectionsRoute():
     if('user' in session):
        return render_template('collections.html',login=True)
-    return render_template('collections.html')
+    return render_template('collections.html',login=False)
 
 
 @app.route("/brands")
 def brands():
     if('user' in session):
        return render_template('brands.html',login=True)
-    return render_template('brands.html')
+    return render_template('brands.html',login=False)
 
 
 @app.route("/cart")
 def cart():
     if('user' in session):
        return render_template('cart.html',login=True)
-    return render_template('cart.html')
+    return render_template('cart.html',login=False)
 
 
 @app.route("/")
 def home():
     if('user' in session):
             return render_template('mansection.html',login=True)
-    return render_template('mansection.html')
+    return render_template('mansection.html',login=False)
 
 
 @app.route("/women")
 def womensection():
     if('user' in session):
         return render_template('womensection.html',login=True)
-    return render_template('womensection.html')
+    return render_template('womensection.html',login=False)
+
+@app.route("/logout")
+def logout():
+    if('user' in session):
+        session.pop('user',None)
+        return render_template('loginpage.html',login=False)
+    
 
 
 @app.route("/login",methods=['GET','POST'])
