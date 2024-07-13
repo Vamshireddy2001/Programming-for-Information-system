@@ -24,6 +24,7 @@ function cartFunction(id)
 
 
 const search=document.querySelector('#search');
+// search.addEventListener('change',()=>window.location.href="/searchresults");
 
 search.addEventListener('input',(e)=>{
    fetch(`/search/${e.target.value}`,{method:'GET'})
@@ -31,22 +32,28 @@ search.addEventListener('input',(e)=>{
     throw new Error('Network response was not ok');
          }
     return res.json();})
-   .then(res=>
+   .then(products=>
     {
-        const container = document.getElementById('productContainer');
+        const container = document.querySelector('.imagemain');
+        console.log(products,container);
         container.innerHTML = ''; 
         products.forEach(product => {
             const productDiv = document.createElement('div');
             productDiv.innerHTML = `
-                <h2>${product.name}</h2>
+                <div class="imgsection" id="col">
+                <h4>${product.name}</h4>
                 <img src="${product.imgpath}" alt="${product.name}">
                 <p>Price: ${product.price}</p>
-            `;
-            container.appendChild(productDiv);
-    })}
-   )
-   .catch(e=>console.log('err',e));
+                   <button onclick="cartFunction('${product.name}')">Add Cart</button>
+                </div>
+            `
+            container.appendChild(productDiv);});
+   
+          
+    }).catch(e=>console.log('err',e));
+
 });
+  
 
 
 
@@ -54,3 +61,12 @@ function saveCollection(route,dictCollection)
 {
     fetch(route,{method:"POST",headers:{"Content-Type":"application/json"}})
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    if(window.location.pathname =="/")
+    {
+        const search=document.querySelector('#search');
+        search.style.display="none";
+    }
+})

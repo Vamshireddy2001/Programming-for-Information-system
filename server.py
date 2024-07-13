@@ -73,6 +73,10 @@ def home():
             return render_template('mansection.html',login=True)
     return render_template('mansection.html',login=False)
 
+@app.route("/searchresults")
+def searchresults():
+    return render_template('searchresults.html')
+
 @app.route("/search/<ID>")
 def search(ID):
     products = product_collection.find({"name": {'$regex': ID, '$options': 'i'}})
@@ -80,7 +84,7 @@ def search(ID):
     for product in products:
         product['_id'] = str(product['_id'])  
         result.append(product)
-
+        print(result)
     return jsonify(result), 200
 
 
