@@ -45,6 +45,10 @@ def home():
             return render_template('mansection.html',login=True)
     return render_template('mansection.html',login=False)
 
+@app.route("/search/<ID>")
+def search(ID):
+    print(ID)
+
 
 @app.route("/women")
 def womensection():
@@ -76,6 +80,7 @@ def login():
                 if(user['password']==password):
                    user['_id'] = str(user['_id'])
                    session['user'] = user
+
                    return redirect('/')
                 else:
                    return render_template('loginpage.html',message="Password not correct!")
