@@ -1,4 +1,4 @@
-from flask import Flask,render_template,redirect,request,url_for,flash,jsonify
+from flask import Flask,render_template,redirect,request,url_for,flash,jsonify,session
 app=Flask(__name__)
 from pymongo import MongoClient
 
@@ -20,29 +20,42 @@ class User:
 
 @app.route("/collections")
 def collectionsRoute():
+    if('user' in session):
+       return render_template('collections.html',login=True)
     return render_template('collections.html')
+
 
 @app.route("/brands")
 def brands():
+    if('user' in session):
+       return render_template('brands.html',login=True)
     return render_template('brands.html')
+
 
 @app.route("/cart")
 def cart():
+    if('user' in session):
+       return render_template('cart.html',login=True)
     return render_template('cart.html')
+
 
 @app.route("/")
 def home():
+    if('user' in session):
+            return render_template('mansection.html',login=True)
     return render_template('mansection.html')
+
 
 @app.route("/women")
 def womensection():
+    if('user' in session):
+        return render_template('womensection.html',login=True)
     return render_template('womensection.html')
 
 
 @app.route("/login",methods=['GET','POST'])
 def login():
        if request.method == 'POST':
-        # Get form data
         email = request.form.get('email')
         password = request.form.get('password')
 
@@ -51,9 +64,12 @@ def login():
            return render_template('loginpage.html',message=message)
         else:
              user=db.users.find_one({'email': email})
+       
              if user :
                 if(user['password']==password):
-                   return render_template('mansection.html',login="Logout Successfull!")
+                   user['_id'] = str(user['_id'])
+                   session['user'] = user
+                   return redirect('/')
                 else:
                    return render_template('loginpage.html',message="Password not correct!")
              else:
