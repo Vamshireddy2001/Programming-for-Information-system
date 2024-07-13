@@ -26,5 +26,11 @@ function cartFunction(id)
 const search=document.querySelector('#search');
 
 search.addEventListener('input',(e)=>{
-console.log(e.target.value);
+   fetch(`/search/${e.target.value}`,{method:'GET'})
+   .then(res=> { if (!res.ok) {
+    throw new Error('Network response was not ok');
+         }
+    return res.json();})
+   .then(res=>console.log(res))
+   .catch(e=>console.log('err',e));
 });

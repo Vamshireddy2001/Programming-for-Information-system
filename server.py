@@ -38,6 +38,15 @@ def cart():
        return render_template('cart.html',login=True)
     return render_template('cart.html',login=False)
 
+@app.route('/savecollection',methods=['GET','POST'])
+def savecollection():
+    if(request.method=='POST'):
+        name=request.args.get('name')
+        imgpath=request.args.get('imgpath')
+        price=request.args.get('price')
+        db.products.insert_one({"name":name,"imgpath":imgpath,"price":price})
+        return "saved collection!"
+
 
 @app.route("/")
 def home():
@@ -47,7 +56,7 @@ def home():
 
 @app.route("/search/<ID>")
 def search(ID):
-    print(ID)
+    return jsonify({"ID":ID})
 
 
 @app.route("/women")
