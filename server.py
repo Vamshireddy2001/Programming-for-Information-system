@@ -51,8 +51,12 @@ def brands():
     return render_template('brands.html',login=False)
 
 
-@app.route("/cart")
+@app.route("/cart",methods=['GET','POST'])
 def cart():
+    # items=request.get_json()
+    # if(items):
+    #     print(items)
+
     if('user' in session):
        return render_template('cart.html',login=True)
     return render_template('cart.html',login=False)

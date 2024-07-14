@@ -19,11 +19,16 @@ let itemSection=[]
 function cartFunction(id)
 {
     const imagePart=document.querySelector(`#${id}`);
-    itemSection.push(imagePart);
-    fetch('/cart',{method:"POST",headers:{'Content-Type':'application/json'},body:itemSection})
-    .then(e=>res.text())
-    .then(e=>console.log("cart response:",e))
-    .catch(e=>console.log("error cart",e))
+
+    itemSection.push(imagePart.innerHTML);
+    console.log(itemSection)
+    sessionStorage.setItem("cart",JSON.stringify(itemSection));
+    // console.log("imagepart",imagePart);
+
+    // fetch('/cart',{method:"POST",headers:{'Content-Type':'application/json'},body:JSON.stringify(itemSection)})
+    // .then(e=>e.text())
+    // .then(e=>console.log("cart response:",e))
+    // .catch(e=>console.log("error cart",e))
 }
 
 
@@ -72,5 +77,21 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         const search=document.querySelector('#search');
         search.style.display="none";
+    }
+    if(window.location.pathname=="/cart")
+    {
+        let cartItems=sessionStorage.getItem("cart");
+        console.log(cartItems,"cart")
+        const container = document.querySelector('.cartsection');
+        container.innerHTML = ''; // Clear the container first
+        if (cartItems) {
+            cartItems = JSON.parse(cartItems);
+            cartItems.forEach(itemHTML => {
+                const div = document.createElement('div');
+                div.classList.add('imgsection');
+                div.innerHTML = itemHTML;
+                container.appendChild(div);
+            });
+        }
     }
 })
