@@ -20,7 +20,10 @@ function cartFunction(id)
 {
     const imagePart=document.querySelector(`#${id}`);
     itemSection.push(imagePart);
-    console.log(itemSection)
+    fetch('/cart',{method:"POST",headers:{'Content-Type':'application/json'},body:itemSection})
+    .then(e=>res.text())
+    .then(e=>console.log("cart response:",e))
+    .catch(e=>console.log("error cart",e))
 }
 
 
