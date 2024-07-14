@@ -20,6 +20,7 @@ function cartFunction(id)
 {
     const imagePart=document.querySelector(`#${id}`);
     itemSection.push(imagePart);
+    console.log(itemSection)
 }
 
 
