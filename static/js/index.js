@@ -81,6 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if(window.location.pathname=="/cart")
     {
         let cartItems=sessionStorage.getItem("cart");
+        const cartempty=document.querySelector('.cartempty');
+
+        if(cartItems)
+        {
+            cartempty.style.display="none";
+        }
         console.log(cartItems,"cart")
         const container = document.querySelector('.cartsection');
         container.innerHTML = ''; // Clear the container first
