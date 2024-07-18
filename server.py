@@ -43,6 +43,11 @@ def collectionsRoute():
        return render_template('collections.html',login=True)
     return render_template('collections.html',login=False)
 
+@app.route("/categories")
+def categories():
+    if('user' in session):
+       return render_template('categories.html',login=True)
+    return render_template('categories.html',login=False)
 
 @app.route("/brands")
 def brands():
@@ -173,6 +178,7 @@ def CheckForNames(name,email,password,confirmpassword):
     elif(confirmpassword!=password):
         return('password not match!')
         
+
 
 if __name__ == "__main__":
     app.run(debug=True)

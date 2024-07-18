@@ -19,11 +19,21 @@ let itemSection=[]
 function cartFunction(id)
 {
     const imagePart=document.querySelector(`#${id}`);
+    
+    const button=imagePart.querySelector('button')
 
-    itemSection.push(imagePart.innerHTML);
-    console.log(itemSection)
+    const image=imagePart.querySelector('img').src;
+    
+    const h4=imagePart.querySelectorAll('h4');
+
+    
+    let object={button,image,"text":h4[0].innerText,"price":h4[1].innerText};
+
+    itemSection.push(object);
+     
+    alert("Item added to cart!")
     sessionStorage.setItem("cart",JSON.stringify(itemSection));
-    // console.log("imagepart",imagePart);
+
 
     // fetch('/cart',{method:"POST",headers:{'Content-Type':'application/json'},body:JSON.stringify(itemSection)})
     // .then(e=>e.text())
@@ -87,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             cartempty.style.display="none";
         }
-        console.log(cartItems,"cart")
+
         const container = document.querySelector('.cartsection');
         container.innerHTML = ''; // Clear the container first
         if (cartItems) {
@@ -95,7 +105,20 @@ document.addEventListener('DOMContentLoaded', function() {
             cartItems.forEach(itemHTML => {
                 const div = document.createElement('div');
                 div.classList.add('imgsection');
-                div.innerHTML = itemHTML;
+                
+                const image=document.createElement('img');
+                image.src=itemHTML.image;
+                div.append(image);
+                const title=document.createElement('h4');
+                title.innerText=itemHTML.text;
+                div.append(title);
+                const price=document.createElement('h4');
+                price.innerText=itemHTML.price;
+                div.append(price);
+           
+                const button=document.createElement('button');
+                button.innerText="Remove From Cart";
+                div.append(button);
                 container.appendChild(div);
             });
         }
