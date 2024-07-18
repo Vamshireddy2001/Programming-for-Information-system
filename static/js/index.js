@@ -118,9 +118,22 @@ document.addEventListener('DOMContentLoaded', function() {
            
                 const button=document.createElement('button');
                 button.innerText="Remove From Cart";
+                button.addEventListener('click',()=>RemoveFromCart(itemHTML))
                 div.append(button);
                 container.appendChild(div);
             });
         }
     }
-})
+});
+function RemoveFromCart(element)
+{
+    let cartItems=JSON.parse(sessionStorage.getItem("cart"));
+
+    cartItems = cartItems.filter(e => !(e.image === element.image && e.text === element.text && e.price === element.price));
+    
+    sessionStorage.setItem('cart',JSON.stringify(cartItems));
+
+    alert("Item removed from cart");
+
+    window.location.reload();
+}
